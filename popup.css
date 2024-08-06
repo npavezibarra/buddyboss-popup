@@ -1,0 +1,58 @@
+#buddyboss-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.5s ease-in-out;
+    z-index: 9998; /* Asegurarse de que el overlay esté por debajo del popup */
+}
+
+#buddyboss-popup-overlay.popup-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#buddyboss-popup {
+    background-color: #fff;
+    min-width:400px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: scale(0.9);
+    z-index: 9999; /* Asegurarse de que el popup esté por encima del overlay */
+}
+
+#buddyboss-popup.popup-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.popup-content {
+    text-align: center;
+}
+
+#popup-close {
+    display: block;
+    margin-top: 20px;
+    color: #0073aa;
+    text-decoration: none;
+    cursor: pointer; /* Asegurarse de que parezca clickeable */
+}
+
+#popup-open {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    color: #0073aa;
+    text-decoration: none;
+    cursor: pointer; /* Asegurarse de que parezca clickeable */
+}
